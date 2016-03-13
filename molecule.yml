@@ -1,0 +1,15 @@
+---
+ansible:
+  verbose: v
+  retry_files_enabled: false
+  host_key_checking: false
+molecule:
+  testinfra_dir: tests
+vagrant:
+  platforms:
+  - name: opebsd58
+    box: twingly/openbsd-5.8-amd64
+  instances:
+  - name: ansible-role-openbsd-bootstrap
+  raw_config_args:
+  - 'vm.synced_folder ".", "/vagrant", disabled: true'

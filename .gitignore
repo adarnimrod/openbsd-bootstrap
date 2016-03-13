@@ -1,0 +1,12 @@
+*.swp
+*.swo
+~*
+*~
+.DS_Store
+__pycache__
+*.pyc
+.cache/
+.molecule/
+.vagrant/
+*.log
+*.retry
