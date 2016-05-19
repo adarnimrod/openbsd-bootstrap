@@ -1,0 +1,19 @@
+---
+ansible:
+  verbose: v
+  playbook: tests/playbook.yml
+
+molecule:
+  testinfra_dir: tests
+  ansible_config_template: ansible.cfg
+
+vagrant:
+  platforms:
+  - name: openbsd
+    box: kaorimatz/openbsd-5.9-amd64
+  instances:
+  - name: ansible-role-nsd
+    options:
+        append_platform_to_hostname: yes
+  raw_config_args:
+  - 'vm.synced_folder ".", "/vagrant", disabled: true'

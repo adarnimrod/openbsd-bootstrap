@@ -1,0 +1,7 @@
+---
+# tasks file for ansible-role-example
+
+- assert:
+    that:
+        - ansible_os_family == 'OpenBSD'
+        - ansible_distribution_release == '5.9'

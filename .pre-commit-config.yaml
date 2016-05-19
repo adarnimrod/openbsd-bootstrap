@@ -1,0 +1,13 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: adbb569fe9a64ad9bce3b53a77f1bc39ef31f682
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-json
+    -   id: check-xml
+    -   id: check-yaml
+    -   id: check-merge-conflict
+-   repo: https://www.shore.co.il/git/ansible-pre-commit/
+    sha: 4c651d686a9a88f9ec65d9490897fee71cdce98d
+    hooks:
+    -   id: ansible-pre-commit
+        files: tests/playbook.yml
