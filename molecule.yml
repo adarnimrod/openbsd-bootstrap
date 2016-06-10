@@ -13,7 +13,7 @@ vagrant:
   - name: openbsd
     box: kaorimatz/openbsd-5.9-amd64
   instances:
-  - name: ansible-role-nsd
+  - name: ansible-role-example
     options:
         append_platform_to_hostname: yes
   raw_config_args:
