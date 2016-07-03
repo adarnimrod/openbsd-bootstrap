@@ -9,6 +9,9 @@ molecule:
   ansible_config_template: ansible.cfg
 
 vagrant:
+  providers:
+  - name: virtualbox
+    type: virtualbox
   platforms:
   - name: openbsd
     box: kaorimatz/openbsd-5.9-amd64
