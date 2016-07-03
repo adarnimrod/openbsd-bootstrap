@@ -8,8 +8,7 @@ more information read the `blog post
 Requirements
 ------------
 
-- `Ansible 2.0 or later <https://www.ansible.com/>`_.
-- `OpenBSD 5.9 or later <http://www.openbsd.org/>`_.
+See :code:`meta/main.yml` and assertions at top of :code:`tasks/main.yml`.
 
 Role Variables
 --------------
