@@ -19,7 +19,7 @@
 - name: Configure pkg
   lineinfile:
     dest: /etc/pkg.conf
-    line: 'installpath = {{ openbsd_pkg_mirror }}/OpenBSD/%v/packages/%a/'
+    line: 'installpath = {{ openbsd_pkg_mirror }}/OpenBSD/%c/packages/%a/'
     regexp: '^installpath ='
     state: present
     create: yes
