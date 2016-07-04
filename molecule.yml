@@ -1,15 +1,23 @@
 ---
 ansible:
   verbose: v
-  retry_files_enabled: false
-  host_key_checking: false
+  playbook: tests/playbook.yml
+  diff: True
+
 molecule:
   testinfra_dir: tests
+  ansible_config_template: ansible.cfg
+
 vagrant:
+  providers:
+  - name: virtualbox
+    type: virtualbox
   platforms:
-  - name: opebsd58
-    box: twingly/openbsd-5.8-amd64
+  - name: openbsd
+    box: kaorimatz/openbsd-5.9-amd64
   instances:
-  - name: ansible-role-openbsd-bootstrap
+  - name: ansible-role-example
+    options:
+        append_platform_to_hostname: yes
   raw_config_args:
   - 'vm.synced_folder ".", "/vagrant", disabled: true'
