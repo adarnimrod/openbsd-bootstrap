@@ -16,7 +16,7 @@ vagrant:
   - name: openbsd
     box: kaorimatz/openbsd-5.9-amd64
   instances:
-  - name: ansible-role-example
+  - name: ansible-role-openbsd-bootstrap
     options:
         append_platform_to_hostname: yes
   raw_config_args:
