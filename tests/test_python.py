@@ -1,2 +1,4 @@
 def test_python(Command):
-    assert Command('python --version').rc == 0
+    python = Command('python --version')
+    assert python.rc == 0
+    assert '2.7' in python.stdout
