@@ -21,3 +21,4 @@ vagrant:
         append_platform_to_hostname: yes
   raw_config_args:
   - 'vm.synced_folder ".", "/vagrant", disabled: true'
+  - 'vbguest.auto_update = false'
