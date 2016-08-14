@@ -22,3 +22,4 @@ vagrant:
   raw_config_args:
   - 'vm.synced_folder ".", "/vagrant", disabled: true'
   - 'vbguest.auto_update = false'
+  - 'landrush.enabled = false'
