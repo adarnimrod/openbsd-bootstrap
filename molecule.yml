@@ -23,3 +23,4 @@ vagrant:
   - 'vm.synced_folder ".", "/vagrant", disabled: true'
   - 'vbguest.auto_update = false'
   - 'landrush.enabled = false'
+  - 'landrush_ip.override = false'
