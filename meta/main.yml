@@ -10,5 +10,6 @@ galaxy_info:
      - 5.7
      - 5.8
      - 5.9
+     - 6.0
   galaxy_tags: ['OpenBSD', 'bootstrap']
 dependencies: []

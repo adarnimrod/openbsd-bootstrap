@@ -14,10 +14,13 @@ vagrant:
     type: virtualbox
   platforms:
   - name: openbsd
-    box: kaorimatz/openbsd-5.9-amd64
+    box: kaorimatz/openbsd-6.0-amd64
   instances:
   - name: ansible-role-openbsd-bootstrap
     options:
         append_platform_to_hostname: yes
   raw_config_args:
   - 'vm.synced_folder ".", "/vagrant", disabled: true'
+  - 'vbguest.auto_update = false'
+  - 'landrush.enabled = false'
+  - 'landrush_ip.override = false'
