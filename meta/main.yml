@@ -12,4 +12,4 @@ galaxy_info:
 dependencies:
     - src: https://www.shore.co.il/git/ansible-role-openbsd-bootstrap
       scm: git
-      name: bootstrap
+      role: bootstrap

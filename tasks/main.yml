@@ -1,7 +1,8 @@
 ---
 # tasks file for ansible-role-example
 
-- assert:
+- name: Assertions
+  assert:
     that:
         - ansible_os_family == 'OpenBSD'
-        - ansible_distribution_release == '5.9'
+        - ansible_distribution_release == '6.0'

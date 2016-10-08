@@ -14,7 +14,7 @@ vagrant:
     type: virtualbox
   platforms:
   - name: openbsd
-    box: kaorimatz/openbsd-5.9-amd64
+    box: kaorimatz/openbsd-6.0-amd64
   instances:
   - name: ansible-role-example
     options:
