@@ -12,6 +12,8 @@
   register: symlink_python
   changed_when: not 'File exists' in symlink_python.stdout
   failed_when: symlink_python|failed and not 'File exists' in symlink_python.stdout
+  tags:
+      - skip_ansible_lint
 
 - name: Gather facts
   setup:
