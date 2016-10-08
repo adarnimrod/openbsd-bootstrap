@@ -10,3 +10,8 @@
     sha: 94b506c144d4e22ebc1deef637a818db13bcaca5
     hooks:
     -   id: ansible-pre-commit
+-   repo: https://github.com/willthames/ansible-lint.git
+    sha: v3.3.3
+    hooks:
+    -   id: ansible-lint
+        files: \.(yaml|yml)$
