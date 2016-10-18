@@ -8,10 +8,8 @@
   changed_when: "'py-pip' in openbsd_pkg_add_python.stdout"
 
 - name: Symlink python
-  raw: ln -s /usr/local/bin/python2.7 /usr/bin/python
-  register: symlink_python
-  changed_when: not 'File exists' in symlink_python.stdout
-  failed_when: symlink_python|failed and not 'File exists' in symlink_python.stdout
+  raw: ln -fs /usr/local/bin/python2.7 /usr/bin/python
+  changed_when: False # Can't tell if a change was made.
   tags:
       - skip_ansible_lint
 
