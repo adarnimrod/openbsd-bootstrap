@@ -7,14 +7,17 @@
   failed_when: "'error' in openbsd_pkg_add_python.stdout|lower"
   changed_when: "'py-pip' in openbsd_pkg_add_python.stdout"
 
-- name: Symlink python
-  raw: ln -fs /usr/local/bin/python2.7 /usr/bin/python
-  changed_when: False # Can't tell if a change was made.
-  tags:
-      - skip_ansible_lint
-
 - name: Gather facts
   setup:
+
+- name: Symlink python
+  file:
+      path: /usr/bin/python
+      src: /usr/local/bin/python2.7
+      state: link
+      owner: root
+      group: 0
+      mode: 0o0755
 
 - name: Configure pkg
   lineinfile:
