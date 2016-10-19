@@ -13,8 +13,10 @@ vagrant:
   - name: virtualbox
     type: virtualbox
   platforms:
-  - name: openbsd
+  - name: openbsd60
     box: kaorimatz/openbsd-6.0-amd64
+  - name: openbsd56
+    box: tmatilai/openbsd-5.6
   instances:
   - name: ansible-role-openbsd-bootstrap
     options:
