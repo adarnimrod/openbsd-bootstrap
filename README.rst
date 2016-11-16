@@ -6,7 +6,38 @@ Role to bootstrap an OpenBSD instance (allow Ansible to provision the instance).
 Requirements
 ------------
 
-See :code:`meta/main.yml` and assertions at top of :code:`tasks/main.yml`.
+See :code:`meta/main.yml`, :code:`requirements.yml` and assertions at top of
+:code:`tasks/main.yml`.
+
+Adding the role as a dependency
+-------------------------------
+
+Add the following to your :code:`meta/main.yml`:
+
+.. code:: yaml
+
+    dependencies:
+    - src: https://www.shore.co.il/git/ansible-role-example
+      scm: git
+      name: example
+
+When :code: `ansible-galaxy` downloads your role it will also download its
+dependencies, ensuring this role will be present and run everytime your role
+runs.
+
+Adding the role to your playbooks
+---------------------------------
+
+Add the following to your :code:`requirements.yml`:
+
+.. code:: yaml
+
+    - src: https://www.shore.co.il/git/ansible-role-example
+      scm: git
+      name: example
+
+and update your roles by running :code: `ansible-galaxy install -r
+requirements.yml`.
 
 Role Variables
 --------------
@@ -26,17 +57,21 @@ See :code:`tests/playbook.yml`.
 Testing
 -------
 
-To install the dependencies:
+Testing requires Virtualbox and Vagrant (out of scope for this documentation).
+Install the Python dependencies, add pre-commit hooks by running:
 
 .. code:: shell
 
-    ansible-galaxy install git+file://$(pwd),$(git rev-parse --abbrev-ref HEAD) -p .molecule/roles
+    pip install -r tests/requirements.txt
+    pre-commit install
 
 To run the full test suite:
 
 .. code:: shell
 
-    molecule test
+    ansible-galaxy install git+file://$(pwd),$(git rev-parse --abbrev-ref HEAD) -p .molecule/roles
+    pre-commit run --all-files
+    molecule test --platform all
 
 License
 -------

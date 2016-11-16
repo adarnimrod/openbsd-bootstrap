@@ -1,12 +1,9 @@
 ---
 ansible:
-  verbose: v
+  verbose: vv
   playbook: tests/playbook.yml
   diff: True
-
-molecule:
-  testinfra_dir: tests
-  ansible_config_template: ansible.cfg
+  config_file: ../ansible.cfg
 
 vagrant:
   providers:
