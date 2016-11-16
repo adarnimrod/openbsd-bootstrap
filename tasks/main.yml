@@ -4,5 +4,5 @@
 - name: Assertions
   assert:
     that:
-        - ansible_os_family == 'OpenBSD'
-        - ansible_distribution_release == '6.0'
+        - ansible_os_family in ['OpenBSD', 'Debian']
+        - ansible_distribution_release in ['6.0', 'xenial']

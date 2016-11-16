@@ -1,12 +1,10 @@
 ---
 ansible:
-  verbose: v
+  verbose: vv
   playbook: tests/playbook.yml
   diff: True
-
-molecule:
-  testinfra_dir: tests
-  ansible_config_template: ansible.cfg
+  config_file: ../ansible.cfg
+  requirements_file: tests/requirements.yml
 
 vagrant:
   providers:
@@ -15,6 +13,8 @@ vagrant:
   platforms:
   - name: openbsd
     box: kaorimatz/openbsd-6.0-amd64
+  - name: ubuntu
+    box: ubuntu/xenial64
   instances:
   - name: ansible-role-example
     options:

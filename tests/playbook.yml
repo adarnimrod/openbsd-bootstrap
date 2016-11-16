@@ -1,5 +1,12 @@
 ---
-- hosts: all
+- hosts: ansible-role-example-openbsd
   gather_facts: false
+  roles: [openbsd_bootstrap]
+
+- hosts: ansible-role-example-ubuntu
+  gather_facts: false
+  roles: [debian_bootstrap]
+
+- hosts: all
   roles:
     - role: ansible-role-example

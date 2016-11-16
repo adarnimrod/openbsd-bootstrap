@@ -7,9 +7,9 @@ galaxy_info:
   platforms:
   - name: OpenBSD
     versions:
-    - 5.9
+    - 6.0
+  - name: Ubuntu
+    versions:
+    - xenial
   galaxy_tags: [ ansible ]
-dependencies:
-    - src: https://www.shore.co.il/git/ansible-role-openbsd-bootstrap
-      scm: git
-      role: openbsd_bootstrap
+dependencies: []
