@@ -1,7 +1,7 @@
 ---
 - src: https://www.shore.co.il/git/ansible-role-openbsd-bootstrap
   scm: git
-  role: openbsd_bootstrap
+  name: openbsd_bootstrap
 - src: https://www.shore.co.il/git/ansible-role-debian-bootstrap
   scm: git
-  role: debian_bootstrap
+  name: debian_bootstrap
