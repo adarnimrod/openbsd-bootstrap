@@ -3,3 +3,9 @@
   gather_facts: False
   roles:
     - ansible-role-openbsd-bootstrap
+  post_tasks:
+      - name: Test task with an unprivileged user
+        become: True
+        become_user: nobody
+        command: whoami
+        changed_when: False
