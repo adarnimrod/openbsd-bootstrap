@@ -1,17 +1,22 @@
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    sha: 6dfcb89af3c9b4d172cc2e5a8a2fa0f54615a338
+    sha: 7539d8bd1a00a3c1bfd34cdb606d3a6372e83469
     hooks:
     -   id: check-added-large-files
     -   id: check-json
     -   id: check-xml
     -   id: check-yaml
     -   id: check-merge-conflict
--   repo: https://www.shore.co.il/git/ansible-pre-commit/
-    sha: 94b506c144d4e22ebc1deef637a818db13bcaca5
+-   repo: https://www.shore.co.il/git/ansible-pre-commit
+    sha: v0.4.0
     hooks:
-    -   id: ansible-pre-commit
--   repo: https://github.com/willthames/ansible-lint.git
-    sha: v3.3.3
+    -   id: ansible-syntax-check
+        always_run: true
+        files: tests/playbook.yml
+        args: ['tests/playbook.yml']
+-   repo: https://github.com/willthames/ansible-lint
+    sha: v3.4.4
     hooks:
     -   id: ansible-lint
-        files: \.(yaml|yml)$
+        always_run: true
+        files: tests/playbook.yml
+        args: ['tests/playbook.yml']
