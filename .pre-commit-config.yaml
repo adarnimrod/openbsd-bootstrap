@@ -8,7 +8,7 @@
     -   id: check-merge-conflict
     -   id: flake8
     -   id: check-symlinks
--   repo: https://www.shore.co.il/git/ansible-pre-commit
+-   repo: https://github.com/adarnimrod/ansible-pre-commit.git
     sha: 0fadd691465b97db8992cfc66650f630e433324b
     hooks:
     -   id: ansible-syntax-check
