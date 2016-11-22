@@ -27,3 +27,9 @@ vagrant:
   - 'vbguest.auto_update = false'
   - 'landrush.enabled = false'
   - 'landrush_ip.override = false'
+
+docker:
+  containers:
+  - name: ansible-role-example-ubuntu
+    image: ubuntu
+    image_version: xenial
