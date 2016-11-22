@@ -12,6 +12,7 @@
   setup:
 
 - name: Symlink python
+  ignore_errors: '{{ ansible_check_mode }}'
   file:
       path: /usr/bin/python
       src: /usr/local/bin/python2.7

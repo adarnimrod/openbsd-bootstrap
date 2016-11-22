@@ -13,6 +13,7 @@ install:
 
 script:
   - pre-commit run --all-files
+  - ansible-playbook -i localhost, -c local -C tests/playbook.yml -e 'ansible_python_interpreter=/usr/bin/python2.7'
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
