@@ -4,6 +4,7 @@ python: "2.7"
 dist: trusty
 sudo: false
 group: beta
+services: [docker]
 
 install:
   - pip install -r tests/requirements.txt
@@ -12,6 +13,7 @@ install:
 
 script:
   - pre-commit run --all-files
+  - molecule test --driver docker
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

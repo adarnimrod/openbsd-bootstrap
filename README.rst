@@ -29,8 +29,9 @@ See :code:`tests/playbook.yml`.
 Testing
 -------
 
-Testing requires Virtualbox, Vagrant and Python 2.7. Install the Python
-dependencies, dependent roles and roles required for testing:
+Testing requires Python 2.7 and either Docker or Vagrant and Virtualbox.
+Install the Python dependencies, dependent roles and roles required for
+testing:
 
 .. code:: shell
 
@@ -58,9 +59,3 @@ Nimrod Adar, `contact me <nimrod@shore.co.il>`_ or visit my `website
 <https://www.shore.co.il/>`_. Patches are welcome via `git send-email
 <http://git-scm.com/book/en/v2/Git-Commands-Email>`_. The repository is located
 at: https://www.shore.co.il/git/.
-
-TODO
-----
-
-- Perform pre-commit tests in TravisCI.
-- Perform Molecule tests using Docker (just Linux) in TravisCI.
