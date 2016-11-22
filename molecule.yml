@@ -33,3 +33,5 @@ docker:
   - name: ansible-role-example-ubuntu
     image: ubuntu
     image_version: xenial
+    environment:
+        DEBIAN_FRONTEND: noninteractive
