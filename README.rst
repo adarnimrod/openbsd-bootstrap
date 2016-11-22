@@ -29,21 +29,21 @@ See :code:`tests/playbook.yml`.
 Testing
 -------
 
-Testing requires Virtualbox and Vagrant and Python 2.7. Install the Python
-dependencies, add pre-commit hooks by running:
+Testing requires Virtualbox, Vagrant and Python 2.7. Install the Python
+dependencies, dependent roles and roles required for testing:
 
 .. code:: shell
 
     pip install -r tests/requirements.txt
-    pre-commit install
+    ansible-galaxy install git+file://$(pwd),$(git rev-parse --abbrev-ref HEAD) -p .molecule/roles
+    molecule dependency
 
 To run the full test suite:
 
 .. code:: shell
 
-    ansible-galaxy install git+file://$(pwd),$(git rev-parse --abbrev-ref HEAD) -p .molecule/roles
-    molecule test --platform all
     pre-commit run --all-files
+    molecule test --platform all
 
 License
 -------

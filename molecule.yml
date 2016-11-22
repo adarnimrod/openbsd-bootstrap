@@ -4,6 +4,9 @@ ansible:
   playbook: tests/playbook.yml
   diff: True
   config_file: ../ansible.cfg
+
+dependencies:
+  name: galaxy
   requirements_file: tests/requirements.yml
 
 vagrant:
