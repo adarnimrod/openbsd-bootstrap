@@ -1,7 +1,3 @@
 ---
-- src: https://github.com/adarnimrod/ansible-role-openbsd-bootstrap
-  scm: git
-  name: openbsd_bootstrap
-- src: https://github.com/adarnimrod/ansible-role-debian-bootstrap
-  scm: git
-  name: debian_bootstrap
+- role: openbsd-bootstrap
+- role: debian-bootstrap

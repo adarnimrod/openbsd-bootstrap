@@ -19,7 +19,7 @@ vagrant:
   - name: ubuntu
     box: ubuntu/xenial64
   instances:
-  - name: ansible-role-example
+  - name: example
     options:
         append_platform_to_hostname: yes
   raw_config_args:
@@ -30,7 +30,7 @@ vagrant:
 
 docker:
   containers:
-  - name: ansible-role-example-ubuntu
+  - name: example-ubuntu
     image: ubuntu
     image_version: xenial
     environment:
