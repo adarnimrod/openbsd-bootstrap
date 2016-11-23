@@ -1,11 +1,11 @@
 ---
 - hosts: example-openbsd
   gather_facts: false
-  roles: [openbsd_bootstrap]
+  roles: [adarnimrod.openbsd-bootstrap]
 
 - hosts: example-ubuntu
   gather_facts: false
-  roles: [debian_bootstrap]
+  roles: [adarnimrod.debian-bootstrap]
 
 - hosts: all
   roles:
