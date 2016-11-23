@@ -1,4 +1,4 @@
 ---
-# defaults file for ansible-role-openbsd-bootstrap
+# defaults file for openbsd-bootstrap
 
 openbsd_pkg_mirror: http://www.mirrorservice.org/pub # Where to get packages.

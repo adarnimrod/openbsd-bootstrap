@@ -1,5 +1,5 @@
 ---
-# tasks file for ansible-role-openbsd-bootstrap
+# tasks file for openbsd-bootstrap
 - name: Install Python
   raw: "PKG_PATH={{ openbsd_pkg_mirror }}/OpenBSD/$(uname -r)/packages/$(arch -s)/ /usr/sbin/pkg_add -Iz python-2.7"
   register: openbsd_pkg_add_python
