@@ -1,6 +1,9 @@
 Example
 #######
 
+.. image:: https://travis-ci.org/adarnimrod/example.svg?branch=master
+    :target: https://travis-ci.org/adarnimrod/example
+
 An (empty) example Ansible role complete with working tests out of the box. For
 more information read the `blog post
 <https://www.shore.co.il/blog/ansible-example-role/>`_.
