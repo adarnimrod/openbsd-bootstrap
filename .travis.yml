@@ -7,7 +7,7 @@ group: beta
 services: [docker]
 
 install:
-  - pip install -r tests/requirements.txt
+  - pip install -r tests/requirements.txt | cat
   - ansible-galaxy install git+file://$(pwd),$(git rev-parse --abbrev-ref HEAD) -p .molecule/roles
   - molecule dependency
 
