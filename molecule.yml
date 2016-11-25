@@ -5,7 +5,7 @@ ansible:
   diff: True
   config_file: ../ansible.cfg
 
-dependencies:
+dependency:
   name: galaxy
   requirements_file: tests/requirements.yml
 
