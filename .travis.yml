@@ -5,6 +5,10 @@ dist: trusty
 sudo: false
 group: beta
 services: [docker]
+cache:
+  - pip
+  - directories:
+      - $HOME/.pre-commit
 
 install:
   - pip install -r tests/requirements.txt | cat
