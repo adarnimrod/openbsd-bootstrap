@@ -9,6 +9,7 @@ cache:
   - pip
   - directories:
       - $HOME/.pre-commit
+      - $HOME/virtualenv
 
 install:
   - pip install -r tests/requirements.txt | cat
