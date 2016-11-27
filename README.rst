@@ -1,6 +1,9 @@
 OpenBSD bootstrap
 #################
 
+.. image:: https://travis-ci.org/adarnimrod/openbsd-bootstrap.svg?branch=master
+    :target: https://travis-ci.org/adarnimrod/openbsd-bootstrap
+
 Role to bootstrap an OpenBSD instance (allow Ansible to provision the instance).
 
 Requirements
