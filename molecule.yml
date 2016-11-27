@@ -16,7 +16,7 @@ vagrant:
   platforms:
   - name: openbsd
     box: kaorimatz/openbsd-6.0-amd64
-  - name: ubuntu
+  - name: xenial
     box: ubuntu/xenial64
   instances:
   - name: example
@@ -30,8 +30,15 @@ vagrant:
 
 docker:
   containers:
-  - name: example-ubuntu
+  - name: example-xenial
     image: ubuntu
     image_version: xenial
+    command: /sbin/init
+    cap_add:
+      - SYS_ADMIN
+    volume_mounts:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
     environment:
         DEBIAN_FRONTEND: noninteractive
+        container: docker
