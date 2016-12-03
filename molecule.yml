@@ -34,8 +34,7 @@ docker:
     image: ubuntu
     image_version: xenial
     command: /sbin/init
-    cap_add:
-      - SYS_ADMIN
+    privileged: True
     volume_mounts:
       - /sys/fs/cgroup:/sys/fs/cgroup
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
