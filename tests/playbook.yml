@@ -1,11 +1,11 @@
 ---
 - hosts: example-openbsd
   gather_facts: false
-  roles: [adarnimrod.openbsd-bootstrap]
+  roles: [openbsd-bootstrap]
 
 - hosts: example-xenial
   gather_facts: false
-  roles: [adarnimrod.debian-bootstrap]
+  roles: [debian-bootstrap]
 
 - hosts: all
   strategy: free
