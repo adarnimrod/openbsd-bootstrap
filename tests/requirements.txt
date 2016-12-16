@@ -6,3 +6,4 @@ pre-commit==0.9.4
 piprot==0.9.7
 python-vagrant==0.5.14
 docker-py==1.10.6
+netaddr==0.7.18
