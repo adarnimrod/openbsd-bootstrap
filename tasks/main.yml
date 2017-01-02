@@ -18,7 +18,7 @@
       src: /usr/local/bin/python2.7
       state: link
       owner: root
-      group: 0
+      group: wheel
       mode: 0o0755
 
 - name: Configure pkg
