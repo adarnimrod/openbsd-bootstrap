@@ -35,3 +35,10 @@
     regexp: '^installpath ='
     state: present
     create: yes
+
+- name: pkg install sudo
+  when: ansible_distribution_release|version_compare('5.7', '>')
+  ignore_errors: "{{ ansible_check_mode }}"
+  openbsd_pkg:
+      name: '{{ openbsd_bootstrap_sudo_pkg[ansible_distribution_release] }}'
+      state: present

@@ -1,4 +1,10 @@
 ---
 # vars file for openbsd-bootstrap
+
 ansible_python_interpreter: '/usr/local/bin/python2.7'
 ansible_become_method: '{{ openbsd_bootstrap_check_sudo.stdout_lines.0 if openbsd_bootstrap_check_sudo is defined else None }}'
+
+openbsd_bootstrap_sudo_pkg:
+    '5.8': sudo-1.8.14.3
+    '5.9': sudo-1.8.15
+    '6.0': sudo-1.8.17.1
