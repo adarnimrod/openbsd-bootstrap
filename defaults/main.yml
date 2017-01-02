@@ -1,3 +1,5 @@
 ---
 # defaults file for openbsd-bootstrap
+#
 openbsd_pkg_mirror: http://www.mirrorservice.org/pub # Where to get packages.
+openbsd_bootstrap_sudo_group: wheel # Allow group to use sudo without prompting for a password.
