@@ -4,9 +4,14 @@ python: "2.7"
 dist: trusty
 sudo: True
 group: beta
+services: [docker]
 env:
     - platform: openbsd
+      driver: vagrant
     - platform: xenial
+      driver: vagrant
+    - driver: docker
+      platform: all
 cache:
   - pip
   - directories:
@@ -23,7 +28,7 @@ install:
 
 script:
   - pre-commit run --all-files
-  - molecule test --platform $platform
+  - molecule test --driver $driver --platform $platform
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
