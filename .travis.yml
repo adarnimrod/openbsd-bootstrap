@@ -7,8 +7,8 @@ group: beta
 env:
     - platform: openbsd60
       driver: vagrant
-    - platform: openbsd59
-      driver: vagrant
+    # - platform: openbsd59
+    #   driver: vagrant
     - platform: openbsd56
       driver: vagrant
 cache:
