@@ -11,9 +11,9 @@ vagrant:
     type: virtualbox
   platforms:
   - name: openbsd60
-    box: kaorimatz/openbsd-6.0-amd64
+    box: fnichol/openbsd-6.0-i386
   - name: openbsd56
-    box: tmatilai/openbsd-5.6
+    box: fnichol/openbsd-5.6-i386
   instances:
   - name: openbsd-bootstrap
     options:

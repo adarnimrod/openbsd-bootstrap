@@ -1,3 +1,4 @@
 ---
 # vars file for openbsd-bootstrap
 ansible_python_interpreter: '/usr/local/bin/python2.7'
+ansible_become_method: '{{ openbsd_bootstrap_check_sudo.stdout_lines.0 if openbsd_bootstrap_check_sudo is defined else None }}'
