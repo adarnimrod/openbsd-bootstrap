@@ -13,20 +13,26 @@ vagrant:
   providers:
   - name: virtualbox
     type: virtualbox
+    options:
+        cpus: 1
   platforms:
   - name: openbsd
-    box: kaorimatz/openbsd-6.0-amd64
+    box: fnichol/openbsd-6.0-i386
   - name: xenial
-    box: ubuntu/xenial64
+    box: ubuntu/xenial32
   instances:
   - name: example
     options:
         append_platform_to_hostname: yes
   raw_config_args:
   - 'vm.synced_folder ".", "/vagrant", disabled: true'
-  - 'vbguest.auto_update = false'
-  - 'landrush.enabled = false'
-  - 'landrush_ip.override = false'
+  - 'vbguest.auto_update = false if Vagrant.has_plugin?("vbguest")'
+  - 'landrush.enabled = false if Vagrant.has_plugin?("landrush")'
+  - 'landrush_ip.override = false if Vagrant.has_plugin?("landrush")'
+  - |
+      vm.provider "virtualbox" do |v|
+        v.customize "pre-boot", ["modifyvm", :id, "--hwvirtex", "off"]
+      end
 
 docker:
   containers:

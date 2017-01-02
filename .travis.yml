@@ -2,22 +2,28 @@
 language: python
 python: "2.7"
 dist: trusty
-sudo: false
+sudo: True
 group: beta
-services: [docker]
+env:
+    - platform: openbsd
+    - platform: xenial
 cache:
   - pip
   - directories:
       - $HOME/.pre-commit
 
 install:
+  - sudo apt-get update
+  - sudo apt-get install -y linux-headers-$(uname -r) virtualbox
+  - wget https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb
+  - sudo dpkg -i vagrant_1.9.1_x86_64.deb
   - pip install -r tests/requirements.txt | cat
   - ansible-galaxy install git+file://$(pwd),$(git rev-parse --abbrev-ref HEAD) -p .molecule/roles
   - molecule dependency
 
 script:
   - pre-commit run --all-files
-  - molecule test --driver docker
+  - molecule test --platform $platform
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

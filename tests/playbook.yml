@@ -8,6 +8,5 @@
   roles: [debian-bootstrap]
 
 - hosts: all
-  strategy: free
   roles:
     - role: example
