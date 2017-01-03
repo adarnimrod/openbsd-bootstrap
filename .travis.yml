@@ -6,15 +6,31 @@ sudo: True
 group: beta
 services: [docker]
 env:
-    - platform: openbsd
+    - platform: openbsd60
+      driver: vagrant
+    - &openbsd59
+      platform: openbsd59
       driver: vagrant
     - platform: xenial
+      driver: vagrant
+    - platform: trusty
+      driver: vagrant
+    - &jessie
+      platform: jessie
+      driver: vagrant
+    - &wheezy
+      platform: wheezy
       driver: vagrant
     - driver: docker
       platform: all
 matrix:
+    fast_finish: True
     allow_failures:
         - python: "3.2"
+        - env: 
+          - *openbsd59
+          - *jessie
+          - *wheezy
 cache:
   - pip
   - directories:
