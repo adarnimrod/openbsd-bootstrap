@@ -7,10 +7,13 @@ group: beta
 env:
     - platform: openbsd60
       driver: vagrant
-    # - platform: openbsd59
-    #   driver: vagrant
+    - &openbsd59
+      platform: openbsd59
+      driver: vagrant
     - platform: openbsd56
       driver: vagrant
+matrix:
+    - env: *openbsd59
 cache:
   - pip
   - directories:
