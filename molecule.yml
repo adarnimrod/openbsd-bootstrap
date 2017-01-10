@@ -16,10 +16,18 @@ vagrant:
     options:
         cpus: 1
   platforms:
-  - name: openbsd
+  - name: openbsd60
     box: fnichol/openbsd-6.0-i386
+  - name: openbsd59
+    box: fnichol/openbsd-5.9-i386
   - name: xenial
     box: ubuntu/xenial32
+  - name: trusty
+    box: ubuntu/trusty32
+  - name: jessie
+    box: debian/jessie32
+  - name: wheezy
+    box: debian/wheezy32
   instances:
   - name: example
     options:
