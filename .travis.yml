@@ -8,18 +8,15 @@ services: [docker]
 env:
     - platform: openbsd60
       driver: vagrant
-    - &openbsd59
-      platform: openbsd59
+    - platform: openbsd59
       driver: vagrant
     - platform: xenial
       driver: vagrant
     - platform: trusty
       driver: vagrant
-    - &jessie
-      platform: jessie
+    - platform: jessie
       driver: vagrant
-    - &wheezy
-      platform: wheezy
+    - platform: wheezy
       driver: vagrant
     - driver: docker
       platform: all
@@ -27,10 +24,9 @@ matrix:
     fast_finish: True
     allow_failures:
         - python: "3.4"
-        - env: 
-          - *openbsd59
-          - *jessie
-          - *wheezy
+        - env: platform=openbsd59 driver=vagrant
+        - env: platform=jessie driver=vagrant
+        - env: platform=wheezy driver=vagrant
 cache:
   - pip
   - directories:
