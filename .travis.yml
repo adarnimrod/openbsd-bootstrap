@@ -1,6 +1,6 @@
 ---
 language: python
-python: ["2.7", "3.4"]
+python: ["2.7", "3.5"]
 dist: trusty
 sudo: True
 group: beta
@@ -14,7 +14,7 @@ env:
       platform: all
 matrix:
     allow_failures:
-        - python: "3.4"
+        - python: "3.5"
 cache:
   - pip
   - directories:
