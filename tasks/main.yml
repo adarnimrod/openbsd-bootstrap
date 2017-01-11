@@ -1,5 +1,6 @@
 ---
 # tasks file for openbsd-bootstrap
+
 - name: Check if sudo is available
   raw: 'which sudo > /dev/null 2>/dev/null && echo sudo || echo doas'
   changed_when: False
