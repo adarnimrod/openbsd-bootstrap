@@ -1,11 +1,11 @@
-ansible==2.2.0.0
-testinfra==1.5.1
+ansible==2.2.1.0
+testinfra==1.5.2
 molecule==1.17.3
-ansible-lint==3.4.9
+ansible-lint==3.4.10
 pre-commit==0.10.1
 piprot==0.9.7
 python-vagrant==0.5.14
 docker-py==1.10.6
-netaddr==0.7.18
+netaddr==0.7.19
 passlib==1.7.0
 bcrypt==3.1.2
