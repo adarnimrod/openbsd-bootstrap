@@ -1,6 +1,6 @@
 ansible==2.2.1.0
 testinfra==1.5.2
-molecule==1.17.3
+molecule==1.18.0
 ansible-lint==3.4.10
 pre-commit==0.10.1
 piprot==0.9.7
