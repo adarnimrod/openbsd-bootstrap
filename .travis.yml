@@ -13,6 +13,7 @@ env:
       driver: vagrant
     - platform: trusty
       driver: vagrant
+    - &precise platform=precise driver=vagrant
     - &jessie platform=jessie driver=vagrant
     - &wheezy platform=wheezy driver=vagrant
     - driver: docker
@@ -22,6 +23,7 @@ matrix:
     allow_failures:
         - python: "3.4"
         - env: *openbsd59
+        - env: *precise
         - env: *jessie
         - env: *wheezy
 cache:

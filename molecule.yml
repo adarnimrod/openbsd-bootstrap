@@ -24,10 +24,12 @@ vagrant:
     box: ubuntu/xenial32
   - name: trusty
     box: ubuntu/trusty32
+  - name: precise
+    box: hashicorp/precise32
   - name: jessie
-    box: debian/jessie32
+    box: deb/jessie-i386
   - name: wheezy
-    box: debian/wheezy32
+    box: deb/wheezy-i386
   instances:
   - name: example
     options:
