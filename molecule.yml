@@ -57,3 +57,33 @@ docker:
     environment:
         DEBIAN_FRONTEND: noninteractive
         container: docker
+  - name: example-trusty
+    image: ubuntu-upstart
+    image_version: trusty
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+        container: docker
+  - name: example-precise
+    image: ubuntu
+    image_version: precise
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+        container: docker
+  - name: example-jessie
+    image: debian
+    image_version: jessie
+    command: /sbin/init
+    cap_add:
+      - SYS_ADMIN
+    volume_mounts:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+        container: docker
+  - name: example-wheezy
+    image: debian
+    image_version: wheezy
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+        container: docker
