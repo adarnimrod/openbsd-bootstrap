@@ -36,21 +36,3 @@
     regexp: '^installpath ='
     state: present
     create: yes
-
-- name: pkg install sudo
-  when: ansible_distribution_release|version_compare('5.7', '>') and openbsd_bootstrap_sudo_group is defined
-  ignore_errors: "{{ ansible_check_mode }}"
-  openbsd_pkg:
-      name: '{{ openbsd_bootstrap_sudo_pkg[ansible_distribution_release] }}'
-      state: present
-
-- name: Allow sudo access
-  when: ansible_distribution_release|version_compare('5.7', '>') and openbsd_bootstrap_sudo_group is defined
-  ignore_errors: "{{ ansible_check_mode }}"
-  lineinfile:
-      dest: '/etc/sudoers'
-      line: '%{{ openbsd_bootstrap_sudo_group }} ALL=(ALL) NOPASSWD: ALL'
-      regexp: '^%{{ openbsd_bootstrap_sudo_group }}'
-      state: present
-      owner: root
-      group: wheel
