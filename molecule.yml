@@ -29,7 +29,7 @@ vagrant:
   - name: jessie
     box: deb/jessie-i386
   - name: wheezy
-    box: deb/wheezy-i386
+    box: bmorg/debian-wheezy-i386
   instances:
   - name: example
     options:
