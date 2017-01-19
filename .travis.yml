@@ -23,9 +23,6 @@ matrix:
     allow_failures:
         - python: "3.4"
         - env: *openbsd59
-        - env: *precise
-        - env: *jessie
-        - env: *wheezy
 cache:
   - pip
   - directories:
