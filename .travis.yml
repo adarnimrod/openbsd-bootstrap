@@ -4,20 +4,14 @@ python: ["2.7", "3.5"]
 dist: trusty
 sudo: True
 group: beta
-services: [docker]
 env:
     - platform: openbsd60
-      driver: vagrant
-    - &openbsd59 platform=openbsd59 driver=vagrant
+    - &openbsd59 platform=openbsd59
     - platform: xenial
-      driver: vagrant
     - platform: trusty
-      driver: vagrant
-    - &precise platform=precise driver=vagrant
-    - &jessie platform=jessie driver=vagrant
-    - &wheezy platform=wheezy driver=vagrant
-    - driver: docker
-      platform: all
+    - platform: precise
+    - platform: jessie
+    - platform: wheezy
 matrix:
     fast_finish: True
     allow_failures:
@@ -39,7 +33,7 @@ install:
 
 script:
   - pre-commit run --all-files
-  - molecule test --driver $driver --platform $platform
+  - molecule test --platform $platform
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
