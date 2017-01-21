@@ -10,6 +10,7 @@ env:
     - platform: xenial
     - platform: trusty
     - platform: precise
+    - &stretch platform=stretch
     - platform: jessie
     - platform: wheezy
 matrix:
@@ -17,6 +18,7 @@ matrix:
     allow_failures:
         - python: "3.5"
         - env: *openbsd59
+        - env: *stretch
 cache:
   - pip
   - directories:
