@@ -1,8 +1,8 @@
 ansible==2.2.1.0
 testinfra==1.5.2
-molecule==1.18.0
+molecule==1.19.0
 ansible-lint==3.4.10
-pre-commit==0.10.1
+pre-commit==0.11.0
 piprot==0.9.7
 python-vagrant==0.5.14
 docker-py==1.10.6

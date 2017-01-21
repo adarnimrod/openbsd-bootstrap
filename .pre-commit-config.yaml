@@ -30,6 +30,6 @@
         name: piprot
         description: Check up-to-date Python requirements
         language: system
-        entry: piprot --quiet --outdated tests/requirements.txt
+        entry: piprot --outdated tests/requirements.txt
         files: requirements.txt
         always_run: true
