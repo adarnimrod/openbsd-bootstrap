@@ -6,5 +6,5 @@ pre-commit==0.12.2
 piprot==0.9.7
 python-vagrant==0.5.14
 netaddr==0.7.19
-passlib==1.7.0
+passlib==1.7.1
 bcrypt==3.1.2
