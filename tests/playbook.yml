@@ -4,12 +4,6 @@
   roles:
     - role: openbsd-bootstrap
   post_tasks:
-      - name: Test gathering facts
-        setup:
-
-      - name: Test ping
-        ping:
-
       - name: Test task with an unprivileged user
         ignore_errors: '{{ ansible_check_mode }}'
         become: True

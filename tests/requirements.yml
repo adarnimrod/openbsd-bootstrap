@@ -3,3 +3,5 @@
   name: openbsd-bootstrap
 - src: adarnimrod.debian-bootstrap
   name: debian-bootstrap
+- src: adarnimrod.users
+  name: users

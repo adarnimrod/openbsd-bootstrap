@@ -1,19 +1,17 @@
 ---
 language: python
-python: ["2.7", "3.4"]
+python: ["2.7", "3.5"]
 dist: trusty
 sudo: True
 group: beta
 env:
     - platform: openbsd60
-      driver: vagrant
-    - &openbsd59 platform=openbsd59 driver=vagrant
+    - &openbsd59 platform=openbsd59
     - platform: openbsd56
-      driver: vagrant
 matrix:
     fast_finish: True
     allow_failures:
-        - python: "3.4"
+        - python: "3.5"
         - env: *openbsd59
 cache:
   - pip
@@ -31,7 +29,7 @@ install:
 
 script:
   - pre-commit run --all-files
-  - molecule test --driver $driver --platform $platform
+  - molecule test --platform $platform
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

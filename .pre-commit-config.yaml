@@ -9,7 +9,7 @@
     -   id: flake8
     -   id: check-symlinks
 -   repo: https://github.com/adarnimrod/ansible-pre-commit.git
-    sha: 0fadd691465b97db8992cfc66650f630e433324b
+    sha: v0.5.0
     hooks:
     -   id: ansible-syntax-check
         always_run: true
@@ -30,6 +30,6 @@
         name: piprot
         description: Check up-to-date Python requirements
         language: system
-        entry: piprot --quiet --outdated tests/requirements.txt
+        entry: piprot --outdated tests/requirements.txt
         files: requirements.txt
         always_run: true
