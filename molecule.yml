@@ -37,6 +37,7 @@ vagrant:
     options:
         append_platform_to_hostname: yes
   raw_config_args:
+  - 'vm.boot_timeout = 600'
   - 'vm.synced_folder ".", "/vagrant", disabled: true'
   - 'vbguest.auto_update = false if Vagrant.has_plugin?("vbguest")'
   - 'landrush.enabled = false if Vagrant.has_plugin?("landrush")'
