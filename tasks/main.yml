@@ -21,11 +21,11 @@
 
 - name: Symlink python
   with_items:
-      - python
-      - python2
+      - /usr/bin/python
+      - /usr/local/bin/python2
   ignore_errors: '{{ ansible_check_mode }}'
   file:
-      path: '/usr/local/bin/{{ item }}'
+      path: '{{ item }}'
       src: /usr/local/bin/python2.7
       state: link
       owner: root
