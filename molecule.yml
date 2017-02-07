@@ -45,4 +45,5 @@ vagrant:
   - |
       vm.provider "virtualbox" do |v|
         v.customize "pre-boot", ["modifyvm", :id, "--hwvirtex", "off"]
+        v.memory = ENV['VBOX_MEMORY'].to_i if ENV.has_key?('VBOX_MEMORY')
       end

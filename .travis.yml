@@ -5,14 +5,17 @@ dist: trusty
 sudo: True
 group: beta
 env:
-    - platform: openbsd60
-    - &openbsd59 platform=openbsd59
-    - platform: xenial
-    - platform: trusty
-    - platform: precise
-    - &stretch platform=stretch
-    - platform: jessie
-    - platform: wheezy
+    global:
+        - VBOX_MEMORY=2048
+    matrix:
+        - platform: openbsd60
+        - &openbsd59 platform=openbsd59
+        - platform: xenial
+        - platform: trusty
+        - platform: precise
+        - &stretch platform=stretch
+        - platform: jessie
+        - platform: wheezy
 matrix:
     fast_finish: True
     allow_failures:
