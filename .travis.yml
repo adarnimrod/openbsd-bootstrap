@@ -35,7 +35,7 @@ install:
 
 script:
   - pre-commit run --all-files
-  - molecule test --platform $platform
+  - travis_wait 45 molecule test --platform $platform
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
