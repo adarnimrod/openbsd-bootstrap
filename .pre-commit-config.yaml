@@ -24,12 +24,7 @@
         files: tests/playbook.yml
         args:
         - tests/playbook.yml
--   repo: local
+-   repo: https://github.com/adarnimrod/python-pre-commit.git
+    sha: v0.1.0
     hooks:
     -   id: piprot
-        name: piprot
-        description: Check up-to-date Python requirements
-        language: system
-        entry: piprot --outdated tests/requirements.txt
-        files: requirements.txt
-        always_run: true
