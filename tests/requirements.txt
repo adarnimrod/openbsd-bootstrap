@@ -3,7 +3,6 @@ testinfra==1.5.3
 molecule==1.20.0
 ansible-lint==3.4.10
 pre-commit==0.12.2
-piprot==0.9.7
 python-vagrant==0.5.14
 netaddr==0.7.19
 passlib==1.7.1
