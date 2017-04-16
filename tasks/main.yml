@@ -33,6 +33,7 @@
       mode: 0o0755
 
 - name: Configure pkg
+  when: ansible_distribution_version|version_compare('6.1', '<')
   lineinfile:
     dest: /etc/pkg.conf
     line: 'installpath = {{ openbsd_pkg_mirror }}/OpenBSD/{{ ansible_distribution_version }}/packages/{{ ansible_architecture }}/'
