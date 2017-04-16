@@ -35,7 +35,7 @@
 - name: Configure pkg
   lineinfile:
     dest: /etc/pkg.conf
-    line: 'installpath = {{ openbsd_pkg_mirror }}/OpenBSD/{{ ansible_distribution_release }}/packages/{{ ansible_architecture }}/'
+    line: 'installpath = {{ openbsd_pkg_mirror }}/OpenBSD/{{ ansible_distribution_version }}/packages/{{ ansible_architecture }}/'
     regexp: '^installpath ='
     state: present
     create: yes
