@@ -5,9 +5,12 @@ dist: trusty
 sudo: True
 group: beta
 env:
-    - platform: openbsd60
-    - &openbsd59 platform=openbsd59
-    - platform: openbsd56
+    global:
+        - VBOX_MEMORY=2048
+    matrix:
+        - platform: openbsd60
+        - &openbsd59 platform=openbsd59
+        - platform: openbsd56
 matrix:
     fast_finish: True
     allow_failures:
@@ -29,8 +32,9 @@ install:
 
 script:
   - pre-commit run --all-files
-  - molecule test --platform $platform
+  - travis_wait 45 molecule test --platform $platform
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   email: false
+  on_failure: never
