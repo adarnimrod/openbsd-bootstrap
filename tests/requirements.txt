@@ -1,4 +1,4 @@
-ansible==2.3.0.0
+ansible==2.9.20
 testinfra==1.5.5
 molecule==1.23.2
 ansible-lint==3.4.12
